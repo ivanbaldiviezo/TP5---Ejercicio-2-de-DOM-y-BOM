@@ -4,87 +4,118 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Baldiviezo Cristian Ivan" />
-    <meta
-      name="description"
-      content="¿Queres saber a que generación pertenes?"
-    />
-    <meta name="keywords" content="generación, edad, año" />
+    <meta name="description"content="Formulario para registrar tus datos y saber a que generación pertenes o si sos mayor de edad"/>
+    <meta name="keywords" content="generación, Información,formulario, edad, año" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <title>GENERACIÓN</title>
+    <title>Formulario</title>
   </head>
 </html>
+
 <body>
-  <form id="formularioPersona">
-    <label for="nombre">Nombre:</label>
-    <input
-      type="text"
-      id="nombre"
-      placeholder="Ej: Juan Perez"
-      minlength="6"
-      maxlength="50"
-      required
-    /><br />
+  <div class="container mt-5">
+    <h1 class="text-center">Completar Formulario</h1>
 
-    <label for="edad">Edad:</label>
-    <input
-      type="number"
-      id="edad"
-      placeholder="Ej: 26"
-      minlength="1"
-      maxlength="3"
-      required
-    /><br />
+    <form id="personaForm">
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nombre"
+          placeholder="Ej: Juan Perez"
+          minlength="6"
+          maxlength="50"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="edad">Edad:</label>
+        <input
+          type="number"
+          class="form-control"
+          id="edad"
+          placeholder="Ej: 26"
+          minlength="1"
+          maxlength="3"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="dni">DNI:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="dni"
+          placeholder="Ej: 11111111"
+          minlength="7"
+          maxlength="8"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="sexo">Sexo:</label>
+        <select class="form-control" id="sexo" required>
+          <option value="H">Hombre</option>
+          <option value="M">Mujer</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="peso">Peso (kg):</label>
+        <input
+          type="number"
+          class="form-control"
+          id="peso"
+          placeholder="Ej: 75"
+          minlength="1"
+          maxlength="3"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="altura">Altura (cm):</label>
+        <input
+          type="number"
+          class="form-control"
+          id="altura"
+          placeholder="Ej: 180"
+          minlength="2"
+          maxlength="3"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="anoNacimiento">Año de Nacimiento:</label>
+        <input
+          type="number"
+          class="form-control"
+          id="anoNacimiento"
+          placeholder="Ej: 1990"
+          minlength="4"
+          required
+        />
+      </div>
+      <button
+        type="button"
+        class="container-fluid btn btn-primary"
+        onclick="registrarPersona()">Registrar Persona</button>
+    </form>
 
-    <label for="dni">DNI:</label>
-    <input
-      type="text"
-      id="dni"
-      placeholder="Ej: 11111111"
-      minlength="7"
-      maxlength="8"
-      required
-    /><br />
+    <div id="resultados" class="mt-4" style="display: none">
+      <h3>Datos de la Persona:</h3>
+      <p id="datosPersona"></p>
 
-    <label for="sexo">Sexo: </label>
-    <select id="sexo">
-      <option value="H">Hombre</option>
-      <option value="M">Mujer</option>
-    </select><br>
-
-    <label for="peso">Peso:</label>
-    <input
-      type="number"
-      id="peso"
-      placeholder="Ej: 75"
-      minlength="1"
-      maxlength="3"
-      required
-    />
-    <span>kg</span><br>
-
-    <label for="altura">Altura:</label>
-    <input 
-    type="number" 
-    id="altura" 
-    placeholder="Ej: 180"
-    minlength="2"
-    maxlength="3"
-    required />
-    <span>cm</span><br>
-
-    <label for="anoNacimiento">Año de Nacimiento:</label>
-    <input type="number" 
-    id="anoNacimiento" 
-    placeholder="Ej: 1990"
-    minlength="4"
-    required /><br>
-
-    <button type="button">Crear Persona</button>
-  </form>
+      <button class="btn btn-info" onclick="mostrarGeneracion()">
+        Mostrar Generación
+      </button>
+      <button class="btn btn-success" onclick="esMayorDeEdad()">
+        ¿Es Mayor de Edad?
+      </button>
+    </div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
   <script src="js/ejercicio2.js"></script>

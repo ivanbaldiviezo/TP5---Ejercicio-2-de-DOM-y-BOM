@@ -1,12 +1,8 @@
-* {
-    font-family: 'VT323', monospace;
-}
+
 h1 {
     color: #0022ff; 
     text-align: center;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
+    font-size: 50px 
     ;
-}
-#numeroInput {
-max-width: 300px;   
 }
